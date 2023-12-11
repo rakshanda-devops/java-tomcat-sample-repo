@@ -4,11 +4,11 @@ pipeline {
         stage('Build Application') {
             steps {
                 sh 'mvn -f pom.xml clean package'
-            }git
+            }
             post {
                 success {
                     echo 'Now Archiving the Artifact'
-                    archiveArtifact artifacts: '**/*.war'
+                    archiveArtifacts artifacts: '**/*.war'
                 }
             }
         }
@@ -26,3 +26,4 @@ pipeline {
         }
     }
 }
+
