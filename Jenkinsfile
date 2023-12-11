@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                sh 'nvn -f pom.xml clean package'
-            }
+                sh 'mvn -f pom.xml clean package'
+            }git
             post {
                 success {
                     echo 'Now Archiving the Artifact'
